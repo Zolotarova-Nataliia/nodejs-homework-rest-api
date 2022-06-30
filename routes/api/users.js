@@ -33,6 +33,10 @@ router.patch(
 
 router.get("/current", authMiddleware, users.getCurrent);
 
+router.get("/verify/:verificationToken", users.verifyEmail);
+
+router.post("/verify", users.resendEmail);
+
 router.get("/logout", authMiddleware, users.logout);
 
 module.exports = router;
